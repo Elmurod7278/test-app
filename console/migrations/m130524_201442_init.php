@@ -32,6 +32,7 @@ class m130524_201442_init extends Migration
         $new_user->generateAuthKey();
         $new_user->password_reset_token = Yii::$app->security->generateRandomString();
         $new_user->email = "something@mail.ru";
+        $new_user->status = User::STATUS_ACTIVE;
         $new_user->save();
 
     }
