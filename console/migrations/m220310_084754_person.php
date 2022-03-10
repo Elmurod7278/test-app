@@ -3,16 +3,16 @@
 use yii\db\Migration;
 
 /**
- * Class m220309_120541_person
+ * Class m220310_084754_person
  */
-class m220309_120541_person extends Migration
+class m220310_084754_person extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->addColumn('person','updated_at',$this->integer());
+        $this->addColumn('person', 'file', $this->string()->defaultValue(null));
     }
 
     /**
@@ -20,7 +20,7 @@ class m220309_120541_person extends Migration
      */
     public function safeDown()
     {
-        echo "m220309_120541_person cannot be reverted.\n";
+        echo "m220310_084754_person cannot be reverted.\n";
 
         return false;
     }
@@ -34,7 +34,7 @@ class m220309_120541_person extends Migration
 
     public function down()
     {
-        echo "m220309_120541_person cannot be reverted.\n";
+        echo "m220310_084754_person cannot be reverted.\n";
 
         return false;
     }

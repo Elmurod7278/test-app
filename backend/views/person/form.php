@@ -15,11 +15,14 @@ $this->title = 'Formani toldiring';
 
         <p>Please fill out the following fields to login:</p>
 
-        <?php $form = ActiveForm::begin(); ?>
-        <?= $form->field($model, 'first_name')->textInput() ?>
-        <?= $form->field($model, 'last_name')->textInput(['autofocus' => true]) ?>
+        <?php $form = ActiveForm::begin(['options' => ['enctype'=>'multipart/form-data']]); ?>
+        <?= $form->field($model, 'first_name')->textInput(['autofocus' => true]) ?>
+
+        <?= $form->field($model, 'last_name')->textInput() ?>
 
         <?= $form->field($model, 'email')->input('email')?>
+
+        <?= $form->field($model, 'file')->fileInput()?>
 
 
 

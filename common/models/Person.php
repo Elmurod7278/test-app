@@ -12,6 +12,11 @@ use yii\web\IdentityInterface;
  * User model
  *
  * @property integer $id
+ * @property string $first_name [varchar(255)]
+ * @property string $last_name [varchar(255)]
+ * @property string $email [varchar(255)]
+ * @property int $created_at [int]
+ * @property int $updated_at [int]
  */
 class Person extends ActiveRecord
 {
@@ -40,10 +45,9 @@ class Person extends ActiveRecord
     {
         return [
             [['first_name','last_name','email'],'required'],
-            [['first_name','last_name','email'],'string'],
+            [['first_name','last_name','email','file'],'string'],
             [['created_at' , 'updated_at'], 'integer' ],
             ['email','email'],
-            ['file','file'],
         ];
     }
     public function attributeLabels(){
