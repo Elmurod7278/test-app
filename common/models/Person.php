@@ -43,6 +43,7 @@ class Person extends ActiveRecord
             [['first_name','last_name','email'],'string'],
             [['created_at' , 'updated_at'], 'integer' ],
             ['email','email'],
+            ['file','file'],
         ];
     }
     public function attributeLabels(){
@@ -50,7 +51,8 @@ class Person extends ActiveRecord
             'id'=>'ID',
             'first_name'=>'FIRST_NAME',
             'last_name'=>'LAST_NAME',
-            'email'=>'EMAIL'
+            'email'=>'EMAIL',
+            'file'=>'File'
         ];
     }
 }
