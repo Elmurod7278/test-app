@@ -2,13 +2,15 @@
 
 namespace backend\controllers;
 
-use app\models\EmployeeSearch;
+
+use common\models\Person;
 use common\models\LoginForm;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
+
 
 
 /**
@@ -30,7 +32,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index','person'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -102,6 +104,10 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+    public function actionPerson(){
+        $model = Person::find()->all();
+        return $this->render('people' , ['model'=>$model]);
     }
 
 

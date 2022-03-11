@@ -17,6 +17,7 @@ use yii\web\IdentityInterface;
  * @property string $email [varchar(255)]
  * @property int $created_at [int]
  * @property int $updated_at [int]
+ * @property string $file [varchar(255)]
  */
 class Person extends ActiveRecord
 {
@@ -44,10 +45,11 @@ class Person extends ActiveRecord
     public function rules()
     {
         return [
-            [['first_name','last_name','email'],'required'],
-            [['first_name','last_name','email','file'],'string'],
+            [['first_name','last_name','email' , 'file'],'required'],
+            [['first_name','last_name','email'],'string'],
             [['created_at' , 'updated_at'], 'integer' ],
             ['email','email'],
+            ['file','file'],
         ];
     }
     public function attributeLabels(){

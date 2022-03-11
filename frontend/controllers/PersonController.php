@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use frontend\models\PersonForm;
 use common\models\Person;
+use Yii;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 

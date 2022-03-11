@@ -13,8 +13,8 @@ $this->title = 'Formani toldiring';
     <div class="mt-5 offset-lg-3 col-lg-6">
         <h1><?= Html::encode($this->title) ?></h1>
         <?php $form = ActiveForm::begin(['options'=> ['enctype'=>'multipart/form-data']]); ?>
-        <?= $form->field($model, 'first_name')->textInput() ?>
-        <?= $form->field($model, 'last_name')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'first_name')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'last_name')->textInput() ?>
         <?= $form->field($model, 'email')->input('email')?>
         <?= $form->field($model, 'file')->fileInput()?>
 
