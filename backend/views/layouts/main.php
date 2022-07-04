@@ -48,6 +48,14 @@ AppAsset::register($this);
             )
             . Html::endForm()
             . '</li>';
+        $menuItems[] = '<li>'
+            . Html::beginForm(['/site/person'], 'post', ['class' => 'form-inline'])
+            . Html::submitButton(
+                'Our clients',
+                ['class' => ' btn btn-info']
+            )
+            . Html::endForm()
+            . '</li>';
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],

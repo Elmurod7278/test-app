@@ -32,7 +32,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index','person'],
+                        'actions' => ['logout', 'index', 'person','telegram'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -67,6 +67,10 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionTelegram(){
+        return $this->render('telegram');
     }
 
     /**
@@ -105,9 +109,11 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
-    public function actionPerson(){
+
+    public function actionPerson()
+    {
         $model = Person::find()->all();
-        return $this->render('people' , ['model'=>$model]);
+        return $this->render('people', ['model' => $model]);
     }
 
 

@@ -48,7 +48,6 @@ class Person extends ActiveRecord
             [['first_name','last_name','email' , 'file'],'required'],
             [['first_name','last_name','email'],'string'],
             [['created_at' , 'updated_at'], 'integer' ],
-            ['email','email'],
             ['file','file'],
         ];
     }

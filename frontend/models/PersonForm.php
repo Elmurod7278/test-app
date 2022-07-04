@@ -17,7 +17,6 @@ class PersonForm extends Model
         return[
             [['first_name','last_name','email'],'required'],
             [['first_name','last_name','email'],'string'],
-            ['email','email'],
             ['file','file'],
         ];
     }

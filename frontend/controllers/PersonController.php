@@ -21,9 +21,9 @@ class PersonController extends Controller
         if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
 
             //file upload
-            $file_name = $model->first_name;
+
             $model->file = UploadedFile::getInstance($model,'file');
-            $model->file->saveAs('uploads/'.$file_name.'.'.$model->file->extension);
+            $model->file->saveAs('uploads/'.$model->file);
 
             $person = new Person();
             $person->setAttributes($model->attributes);

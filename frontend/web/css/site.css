@@ -88,3 +88,19 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.field-personform-email {
+    position: relative;
+}
+
+.field-personform-email::before {
+    content: "@";
+    position: absolute;
+    top: 39px;
+    left: 7px;
+    font-size: 16px;
+}
+
+.field-personform-email input {
+    padding-left: 25px;
+}

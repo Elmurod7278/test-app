@@ -15,15 +15,14 @@ $this->title = 'Formani toldiring';
         <?php $form = ActiveForm::begin(['options'=> ['enctype'=>'multipart/form-data']]); ?>
         <?= $form->field($model, 'first_name')->textInput(['autofocus' => true]) ?>
         <?= $form->field($model, 'last_name')->textInput() ?>
-        <?= $form->field($model, 'email')->input('email')?>
-        <?= $form->field($model, 'file')->fileInput()?>
+        <?= $form->field($model, 'email')->textInput(['placeholder'=> "example", 'class' => 'form-control tg_input'])->label('Telegram Username')?>
+        <?= $form->field($model, 'file')->fileInput()->label('Your CV')?>
 
 
 
         <div class="form-group">
             <?= Html::submitButton('submit', ['class' => 'btn btn-primary btn-block', 'name' => 'submit-button']) ?>
         </div>
-
         <?php ActiveForm::end(); ?>
     </div>
 </div>
